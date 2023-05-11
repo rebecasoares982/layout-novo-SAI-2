@@ -1968,10 +1968,6 @@ responsive
   margin-top: 15px;
 }
 
-.img-banner-carousel {
- height: 850px;
-}
-
 /**/
 nav {
   display: flex;
@@ -1987,6 +1983,7 @@ nav {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
+  justify-content: center;
 }
 
 .logo img {
@@ -2005,6 +2002,7 @@ nav {
   list-style: none;
   margin: 10px;
   padding: 0;
+  justify-content: center;
 }
 
 .menu li {
@@ -2018,13 +2016,12 @@ nav {
 .menu a {
   text-decoration: none;
   color: #333;
-  font-weight: bold;
-  font-size: 1rem;
+  font-size: 18px;
   transition: all 0.2s ease-in-out;
 }
 
 .menu a:hover {
-  color: #007bff;
+  color: #444444;
 }
 
 .owl-carousel .item {
@@ -2033,8 +2030,8 @@ nav {
 
 /*Carousel */
 .carousel-inner {
-  width: 98%;
-  height: 350px;
+  width: 95%;
+  /*height: 400px;*/
   text-align: center;
   display: block;
   margin: 0 auto;
@@ -2225,7 +2222,11 @@ nav {
 }
 
 /*ícones*/
-.fa-twitter, .fa-facebook, .fa-instagram, .fa-youtube, .fa-linkedin {
+.fa-twitter,
+.fa-facebook,
+.fa-instagram,
+.fa-youtube,
+.fa-linkedin {
   font-size: 17px;
   padding: 7px;
 }
@@ -2285,10 +2286,10 @@ nav {
   display: flex;
   align-items: center;
   border: 1px solid #ccc;
-  border-radius: 50px;
+  border-radius: 8px;
   padding: 0.3rem;
   width: 270px;
-  height: 40px;
+  height: 35px;
 }
 
 .search-form input[type=text] {
@@ -2303,7 +2304,7 @@ nav {
 
 .search-form button[type=submit] {
   border: none;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   color: #555;
   cursor: pointer;
   padding: 0.3rem;
@@ -2311,9 +2312,13 @@ nav {
 }
 
 .search-form button[type=submit]:hover {
-  background-color: #eee;
+  background-color: #ffffff;
 }
 
 .search-form button[type=submit] i {
   margin-right: 0.5rem;
+}
+
+.ms-5 {
+  margin-left: 5rem!important;
 }
