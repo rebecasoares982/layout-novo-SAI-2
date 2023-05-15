@@ -2322,47 +2322,9 @@ nav {
   margin-left: 25rem !important;
 }
 
-/*Reações*/
-.react-icons i {
-  font-size: 20px;
-}
-
-.react-toggle i {
-  font-size: 20px;
-}
-
-.react-icons i[title] {
-  position: relative;
-  /* permite posicionar o elemento filho */
-}
-
-.react-icons i[title]:after {
-  content: attr(title);
-  /* define o conteúdo do pseudo-elemento como o valor do atributo title */
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgb(102, 102, 102);
-  font-size: 12px;
-  padding: 0.25em 0.5em;
-  border-radius: 0.25em;
-  white-space: nowrap;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-
-.react-icons i[title]:hover:after {
-  opacity: 1;
-  /* torna o elemento visível quando o mouse está sobre o ícone */
-}
-
-.react-button {
-  padding-left: 5px
-}
-
-
-
+/*Voltar ao topo*/
 .back-to-top {
+  display: flex;
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -2493,3 +2455,122 @@ button[title]:hover:after {
   font-size: 14px;
   font-weight: bold;
 }*/
+
+/*Reações 
+.content-reactions {
+  position: relative;
+  left: 0;
+  z-index: 2;
+  top: 80%;
+}
+
+.reaction-button {
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.reaction-button:hover {
+  background-color: #f2f2f2;
+}
+
+.reactions-panel {
+  display: none;
+  position: absolute;
+  bottom: 60px;
+  right: -65px;
+  width: 60px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  transition: opacity 0.3s;
+}
+
+.reaction-item {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #999;
+  transition: color 0.3s;
+}
+
+.reaction-item:hover {
+  color: #333;
+}
+
+.reactions-panel.show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}*/
+
+.content-reactions {
+  position: relative;
+  left: 0;
+  z-index: 2;
+  top: 80%;
+}
+
+.reaction-button {
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.reaction-button:hover {
+  background-color: #f2f2f2;
+}
+
+.reactions-panel {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 0;
+  width: 60px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  transition: opacity 0.3s;
+}
+
+.reaction-item {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #999;
+  transition: color 0.3s;
+}
+
+.reaction-item:hover {
+  color: #333;
+}
+
+.reactions-panel.show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -603,17 +603,35 @@
       </div>
     </div>
 
-    <div class="react-button" title="Curtir">
-      <div class="react-icons">
-        <i class="far fa-thumbs-up" title="Curtir"></i>
-        <i class="far fa-thumbs-down" title="Descurtir"></i>
-        <i class="far fa-heart" title="Amar"></i>
-        <i class="far fa-laugh" title="Rir"></i>
+   
+      <div class="content-reactions">
+        <button class="reaction-button" onclick="toggleReactions()">
+          <i class="fas fa-thumbs-up"></i>
+        </button>
+        <div class="reactions-panel">
+          <button class="reaction-item" onclick="react('like')">
+            <i class="fas fa-thumbs-up"></i>
+          </button>
+          <button class="reaction-item" onclick="react('love')">
+            <i class="fas fa-heart"></i>
+          </button>
+          <button class="reaction-item" onclick="react('laugh')">
+            <i class="fas fa-laugh"></i>
+          </button>
+          <button class="reaction-item" onclick="react('surprise')">
+            <i class="fas fa-surprise"></i>
+          </button>
+          <button class="reaction-item" onclick="react('sad')">
+            <i class="fas fa-sad-tear"></i>
+          </button>
+        </div>
       </div>
-      <div class="react-toggle">
-        <i class="far fa-laugh"></i>
-      </div>
-    </div>
+
+
+    <!-- Botão voltar para o topo-->
+    <button class="btn btn-voltar-topo btn-lg back-to-top" type="button">
+      <i class="fas fa-chevron-up"></i>
+    </button>
 
     <div vw class="enabled">
       <div vw-access-button class="active"></div>
@@ -626,9 +644,7 @@
       new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
 
-    <button class="btn btn-voltar-topo btn-lg back-to-top" type="button">
-      <i class="fas fa-chevron-up"></i>
-    </button>
+
 
     <footer>
       <div class="site-footer mt-5">
@@ -697,7 +713,7 @@
       <button id="accessibility-button" aria-label="Acessibilidade" title="Acessibilidade">
         <i class="fa-solid fa-universal-access accessibility-icon"></i>
       </button>
-      
+
       <div class="accessibility-menu-content">
         <div>
           <p>
@@ -742,10 +758,10 @@
 
         </div>
       </div>
+    </div>
+    </div>
+    </div>
 
-    </div>
-    </div>
-    </div>
   </section>
 
   <!-- Scripts -->
@@ -757,160 +773,13 @@
   <script src="assets/js/owl-carousel.js"></script>
   <script src="assets/js/lightbox.js"></script>
   <script src="assets/js/tabs.js"></script>
-  <script src="assets/js/video.js"></script>
+  <script src="assets/js/main.js"></script>
   <script src="assets/js/slick-slider.js"></script>
   <script src="assets/js/custom.js"></script>
 
   <script src="https://kit.fontawesome.com/ab2fbc2fdc.js" crossorigin="anonymous"></script>
-  <script>
-    //according to loftblog tut
-    $('.nav li:first').addClass('active');
-
-    var showSection = function showSection(section, isAnimate) {
-      var
-        direction = section.replace(/#/, ''),
-        reqSection = $('.section').filter('[data-section="' + direction + '"]'),
-        reqSectionPos = reqSection.offset().top - 0;
-
-      if (isAnimate) {
-        $('body, html').animate({
-          scrollTop: reqSectionPos
-        },
-          800);
-      } else {
-        $('body, html').scrollTop(reqSectionPos);
-      }
-
-    };
-
-    var checkSection = function checkSection() {
-      $('.section').each(function () {
-        var
-          $this = $(this),
-          topEdge = $this.offset().top - 80,
-          bottomEdge = topEdge + $this.height(),
-          wScroll = $(window).scrollTop();
-        if (topEdge < wScroll && bottomEdge > wScroll) {
-          var
-            currentId = $this.data('section'),
-            reqLink = $('a').filter('[href*=\\#' + currentId + ']');
-          reqLink.closest('li').addClass('active').
-            siblings().removeClass('active');
-        }
-      });
-    };
-
-    $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
-      e.preventDefault();
-      showSection($(this).attr('href'), true);
-    });
-
-    $(window).scroll(function () {
-      checkSection();
-    });
-  </script>
-
-  <script>
-    // seleciona o botão, as reações e os ícones de reação
-    const reactButton = document.querySelector('.react-button');
-    const reactIcons = document.querySelector('.react-icons');
-    const reactionIcons = document.querySelectorAll('.reaction-icon');
-
-    // oculta o chavron
-    reactButton.querySelector('.fa-laugh').style.display = 'none';
-
-    // oculta as reações
-    reactIcons.style.display = 'none';
-
-    // adiciona um evento de clique no botão
-    reactButton.addEventListener('click', function () {
-      // adiciona ou remove a classe 'open' no botão
-      reactButton.classList.toggle('open');
-      // altera a posição vertical das reações
-      reactIcons.style.flexDirection = reactButton.classList.contains('open') ? 'column' : 'row';
-      // mostra ou oculta as reações
-      reactIcons.style.display = reactButton.classList.contains('open') ? 'flex' : 'none';
-      // oculta o chavron quando o botão é clicado
-      reactButton.querySelector('.fa-chevron-right').style.display = reactButton.classList.contains('open') ? 'none' : 'block';
-    });
-
-    // adiciona um evento de clique em cada ícone de reação
-    for (let i = 0; i < reactionIcons.length; i++) {
-      reactionIcons[i].addEventListener('click', function () {
-        // remove a classe 'open' do botão
-        reactButton.classList.remove('open');
-        // oculta as reações
-        reactIcons.style.display = 'none';
-        // mostra o chavron
-        reactButton.querySelector('.fa-chevron-right').style.display = 'block';
-      });
-    }
-
-    $(document).ready(function () {
-      // Exibir o botão "Subir ao topo" quando o usuário rolar a página para baixo
-      $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
-          $('.back-to-top').fadeIn();
-        } else {
-          $('.back-to-top').fadeOut();
-        }
-      });
-
-      // Rolamento suave para o topo da página
-      $('.back-to-top').click(function () {
-        $('html, body').animate({ scrollTop: 0 }, 800);
-        return false;
-      });
-    });
-
-  </script>
-
-  <script>
-    /*const accessibilityButton = document.getElementById('accessibility-button');
-    accessibilityButton.addEventListener('click', toggleAccessibilityMenu);
-
-    const closeButton = document.getElementById('close-button');
-    closeButton.addEventListener('click', closeAccessibilityMenu);
-
-    function toggleAccessibilityMenu() {
-      const accessibilityMenuContent = document.querySelector('.accessibility-menu-content');
-      accessibilityMenuContent.classList.toggle('show');
-    }
-
-    function closeAccessibilityMenu() {
-      const accessibilityMenuContent = document.querySelector('.accessibility-menu-content');
-      accessibilityMenuContent.classList.remove('show');
-    }*/
-
-    const accessibilityButton = document.getElementById('accessibility-button');
-    accessibilityButton.addEventListener('click', toggleAccessibilityMenu);
-
-    const accessibilityButtonText = document.getElementById('accessibility-button-text');
-    accessibilityButtonText.addEventListener('click', toggleAccessibilityMenu);
-
-    function toggleAccessibilityMenu() {
-      const accessibilityMenuContent = document.querySelector('.accessibility-menu-content');
-      if (!accessibilityMenuContent.classList.contains('show')) {
-        accessibilityMenuContent.classList.add('show');
-      } else {
-        accessibilityMenuContent.classList.remove('show');
-      }
-    }
-
-    accessibilityButton.addEventListener('mouseover', function () {
-      const accessibilityButtonText = document.getElementById('accessibility-button-text');
-      accessibilityButtonText.classList.add('show');
-    });
-
-    accessibilityButton.addEventListener('mouseout', function () {
-      const accessibilityButtonText = document.getElementById('accessibility-button-text');
-      accessibilityButtonText.classList.remove('show');
-    });
-
-  </script>
 
 </body>
-
 </body>
 
 </html>
