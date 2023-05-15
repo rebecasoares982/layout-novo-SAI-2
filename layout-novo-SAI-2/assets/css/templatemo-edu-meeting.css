@@ -1204,7 +1204,7 @@ section.apply-now .item p {
 
 /* 
 ---------------------------------------------
-courses
+acesso rápido
 --------------------------------------------- 
 */
 
@@ -1215,6 +1215,27 @@ section.our-courses {
   background-size: cover;
 }
 
+.item-icones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.item-icones i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  margin-bottom: 10px;
+  color: #015d0d;
+}
+
+
 .our-courses .item .down-content {
   background-color: #fff;
 }
@@ -1224,9 +1245,12 @@ section.our-courses {
   font-size: 18px;
   color: #1f272b;
   text-align: center;
-  border-bottom: 1px solid #eee;
 }
 
+h5 {
+  color: #585858;
+  padding-top: 25px;
+}
 .our-courses .item .down-content .info {
   padding: 25px;
 }
@@ -1237,12 +1261,12 @@ section.our-courses {
 }
 
 .our-courses .item .down-content .info ul li i {
-  color: #406114;
+  color: #a8a8a8;
   font-size: 14px;
 }
 
 .our-courses .item .down-content .info span {
-  color: #a12c2f;
+  color: #8f8f8f;
   font-size: 15px;
   font-weight: 600;
   text-align: right;
