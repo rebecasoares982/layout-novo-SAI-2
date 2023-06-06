@@ -1605,3 +1605,18 @@ button[title]:hover:after {
   justify-content: center;
   align-items: center;
 }
+
+[vw] [vw-access-button] .access-button {
+  width: 38px;
+  float: right;
+  margin-top: -80px;
+  margin-right: -10px;
+}
+
+[vw] [vw-access-button] .pop-up {
+  float: right;
+  width: 0%;
+  margin-right: 30px !important;
+  margin-top: -80px !important;
+  transition: width 0.5s;
+}
