@@ -1607,7 +1607,7 @@ button[title]:hover:after {
 }
 
 [vw] [vw-access-button] .access-button {
-  width: 38px;
+  width: 37px;
   float: right;
   margin-top: -80px;
   margin-right: -10px;
