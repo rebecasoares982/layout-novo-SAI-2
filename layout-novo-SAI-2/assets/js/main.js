@@ -107,7 +107,7 @@ function toggleReactions() {
   reactionsPanel.classList.toggle('show');
 
   if (reactionsPanel.classList.contains('show')) {
-    reactionsPanel.style.display = 'block';
+    reactionsPanel.style.display = 'flex';
   } else {
     reactionsPanel.style.display = 'none';
   }

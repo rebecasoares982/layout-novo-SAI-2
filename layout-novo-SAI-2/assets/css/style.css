@@ -1593,8 +1593,15 @@ button[title]:hover:after {
   color: #333;
 }
 
+.painel-reacoes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .painel-reacoes.show {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
