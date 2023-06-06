@@ -103,8 +103,14 @@ backButton.style.display = 'none';
 
 //Toggle de reações
 function toggleReactions() {
-  const reactionsPanel = document.querySelector('.reactions-panel');
+  const reactionsPanel = document.querySelector('.painel-reacoes');
   reactionsPanel.classList.toggle('show');
+
+  if (reactionsPanel.classList.contains('show')) {
+    reactionsPanel.style.display = 'block';
+  } else {
+    reactionsPanel.style.display = 'none';
+  }
 }
 
 function react(reaction) {
