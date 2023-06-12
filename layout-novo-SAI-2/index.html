@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
   <title>SAI 3.0</title>
@@ -24,13 +24,11 @@
   <div class="post-nav">
     <div class="container">
       <div class="row">
-        <div class="col-sm-1">
-          <div>
-            <p class="text-nowrap mt-3">Última atualização: 15/05/2023 às 15:00 horas</p>
-          </div>
+        <div class="col-12 col-sm-4">
+          <p class="text-nowrap mt-3">Última atualização: 15/05/2023 às 15:00 horas</p>
         </div>
 
-        <div class="col-lg-7 col-sm-12 ms-5">
+        <div class="col-12 col-sm-8">
           <div class="right-icons">
             <ul>
               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -47,30 +45,50 @@
             </ul>
           </div>
         </div>
-
       </div>
     </div>
   </div>
 
-  <nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="logo">
       <img src="assets/images/Brasão_de_Salvador.png" alt="Logo da Prefeitura Municipal de Salvador">
       <br>
       <h1>Prefeitura Municipal de Salvador</h1>
     </div>
 
-    <ul class="menu">
-      <li><a href="#">Início</a></li>
-      <li><a href="#">Sobre Nós</a></li>
-      <li><a href="#">Cidade</a></li>
-      <li><a href="#">Transparência</a></li>
-      <li><a href="#">Principais serviços</a></li>
-      <li><a href="#">Diário Oficial</a></li>
-      <li><a href="#">Notícias</a></li>
-      <li><a href="#">Fale Conosco</a></li>
-    </ul>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>       
+  
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Início</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sobre Nós</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Cidade</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Transparência</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Principais serviços</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Diário Oficial</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Notícias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Fale Conosco</a>
+        </li>
+      </ul>
+    </div>
   </nav>
-
 
   <div class="owl-carousel">
     <div class="item"><img src="assets/images/heading-bg.jpg"></div>
@@ -78,22 +96,21 @@
     <div class="item"><img src="assets/images/salvador-3.jpg"></div>
   </div>
 
-
   <div id="carouselExampleIndicators" class="carousel slide mt-5" data-bs-ride="carousel">
     <div class="carousel-inner img-banner-carousel">
       <div class="carousel-item active">
         <a href="#">
-          <img class="d-block w-100" src="assets/images/heading-bg.jpg" alt="Slide 1">
+          <img class="d-block w-100 img-banner-carousel-inicial" src="assets/images/heading-bg.jpg" alt="Slide 1">
         </a>
       </div>
       <div class="carousel-item">
         <a href="#">
-          <img class="d-block w-100" src="assets/images/salvador-2.jpg" alt="Slide 2">
+          <img class="d-block w-100 img-banner-carousel-inicial" src="assets/images/salvador-2.jpg" alt="Slide 2">
         </a>
       </div>
       <div class="carousel-item">
         <a href="#">
-          <img class="d-block w-100" src="assets/images/salvador-3.jpg" alt="Slide 3">
+          <img class="d-block w-100 img-banner-carousel-inicial" src="assets/images/salvador-3.jpg" alt="Slide 3">
         </a>
       </div>
     </div>
@@ -785,7 +802,20 @@
 
   <script src="https://kit.fontawesome.com/ab2fbc2fdc.js" crossorigin="anonymous"></script>
 
-</body>
-</body>
+  <!-- Inclua a biblioteca JavaScript do Bootstrap -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
+<script>
+  // Função para lidar com o evento de clique no botão de toggle
+  function toggleMenu() {
+    var navbarNav = document.getElementById("navbarNav");
+    navbarNav.classList.toggle("show");
+  }
+
+  // Adicione um ouvinte de evento para o botão de toggle
+  var navbarToggler = document.querySelector(".navbar-toggler");
+  navbarToggler.addEventListener("click", toggleMenu);
+</script>
+
+</body>
 </html>
